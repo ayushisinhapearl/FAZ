@@ -12,11 +12,12 @@ dotenv.config();
 import { connectDB } from "./db.connect/db.connect.js"
 import {errorHandler} from "./middleware/ErrorHandler/globalErrorHandler.js"
 import UserRoute from "./routes/user.routes.js"
+import morgan from "morgan";
 
 
 
 const app = express();
-
+app.use(morgan('dev'));
 // Middleware
 app.use(cors({ 
   origin: "http://localhost:5173",
